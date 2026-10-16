@@ -17,7 +17,7 @@ FD.add({
     const BW = [1, 2, 5, 10, 20, 50, 100, 300, 1000];
     const FILES = [['A song (5 MB)', 5], ['A photo album (100 MB)', 100], ['An HD film (4 GB)', 4000], ['A big game (50 GB)', 50000]];
     const SERVERS = [
-      { d: 'gov.uk', where: 'London, UK', km: 1300, x: 300, y: 60 },
+      { d: 'gov.uk', where: 'London, UK', km: 1300, x: 330, y: 45 },
       { d: 'newsfirst.lk', where: 'Colombo, Sri Lanka', km: 8100, x: 470, y: 140 },
       { d: 'gov.au', where: 'Canberra, Australia', km: 17300, x: 575, y: 215 },
     ];
@@ -70,7 +70,7 @@ FD.add({
           <div class="sim-box">
             <svg viewBox="0 0 640 250" aria-label="Pinging three web servers from Spain">
               <path class="map" d="M40 40h560v190H40z"/>
-              <circle class="you" cx="250" cy="90" r="9"/><text class="svg-lbl" x="250" y="76">You (Spain)</text>
+              <circle class="you" cx="250" cy="90" r="9"/><text class="svg-lbl" x="250" y="114">You (Spain)</text>
               ${SERVERS.map((s, i) => `<path class="route" id="rt${i}" d="M250 90 Q${(250 + s.x) / 2} ${Math.min(90, s.y) - 50} ${s.x} ${s.y}"/><g class="srv"><circle cx="${s.x}" cy="${s.y}" r="8"/><text class="svg-lbl" x="${s.x}" y="${s.y + 24}">${s.d}</text></g>`).join('')}
               <g id="pkt" hidden><rect class="pkt" x="-14" y="-8" width="28" height="16" rx="3"/><text class="pkt-t" y="3">data</text></g>
             </svg>

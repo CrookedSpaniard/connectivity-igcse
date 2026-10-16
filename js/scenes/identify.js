@@ -76,7 +76,7 @@ FD.add({
               <text class="svg-sm" x="20" y="100" transform="rotate(-90 20 100)">billion</text>
               ${[['2003', 60], ['2011', 290], ['2016', 480]].map(([t, x]) => `<text class="svg-sm" x="${x}" y="198">${t}</text>`).join('')}
               <path class="lim" d="M50 145.6 H500"/><text class="lim-t" x="498" y="140">IPv4 limit (4.3 billion)</text>
-              <path class="ln users" d="M60 172 L290 164 L480 140"/><text class="svg-sm lu" x="440" y="130">Internet users</text>
+              <path class="ln users" d="M60 172 L290 164 L480 140"/><text class="svg-sm lu" x="400" y="168">Internet users</text>
               <path class="ln devs" d="M60 176 C 250 160, 380 120, 480 20"/><text class="svg-sm ld" x="400" y="40">Connected devices</text>
             </svg>
           </div>

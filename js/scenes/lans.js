@@ -46,7 +46,7 @@ FD.add({
               <g class="m-cs">
                 ${[[150, 205], [300, 205], [450, 205]].map(([x, y]) => `<path class="lk2" d="M300 120 L${x} ${y}"/>`).join('')}<path class="lk2" d="M300 100 L300 50"/>
                 <circle cx="300" cy="115" r="38" class="srv-ring"/>${FD.dv.server(270, 92)}<text class="svg-lbl" x="300" y="170">Server</text>
-                ${FD.dv.printer(270, 5)}<text class="svg-sm" x="335" y="30">Printer</text>
+                ${FD.dv.printer(270, 5)}<text class="svg-sm" x="352" y="30">Printer</text>
                 ${[[150, 205], [300, 205], [450, 205]].map(([x, y]) => `${FD.dv.desktop(x - 30, y - 22)}<text class="svg-lbl" x="${x}" y="${y + 40}">Client</text>`).join('')}
               </g>
             </svg>

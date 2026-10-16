@@ -253,7 +253,7 @@ button.tg:hover, .tg.on { background: var(--scene); color: #fff; }
 .ptabs button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: .3rem .8rem; font-size: .86rem; font-weight: 600; }
 .ptabs button.on { background: var(--scene); border-color: var(--scene); color: #fff; }
 .sim { display: grid; gap: .8rem; }
-.sim svg { width: 100%; height: auto; display: block; overflow: visible; }
+.sim svg:where(:not(.ic)) { width: 100%; height: auto; display: block; overflow: visible; }
 .sim-box { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: .8rem; }
 .ctrls { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; align-items: center; }
 .rng { display: grid; gap: .15rem; font-size: .84rem; font-weight: 650; min-width: 12rem; flex: 1; }

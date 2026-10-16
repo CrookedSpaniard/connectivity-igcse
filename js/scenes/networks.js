@@ -23,7 +23,7 @@ FD.add({
       ['📹', 'Camcorder', '🖥️', 'Monitor', 'HDMI', 'To operate as a security camera'],
       ['🎮', 'Games controller', '🕹️', 'Games console', 'Bluetooth', 'To control a game'],
     ];
-    const CITIES = [['London', 300, 70], ['Madrid', 285, 105], ['New York', 160, 95], ['Mumbai', 440, 130], ['Sydney', 560, 200], ['São Paulo', 215, 185]];
+    const CITIES = [['London', 300, 70], ['Madrid', 258, 115], ['New York', 160, 95], ['Mumbai', 440, 130], ['Sydney', 560, 200], ['São Paulo', 215, 185]];
     const QUIZ = [
       ['A school connects all the computers in its building.', 'LAN'],
       ['A bank connects its offices in 40 different countries.', 'WAN'],
@@ -86,7 +86,7 @@ FD.add({
             <svg viewBox="0 0 640 220" aria-label="A laptop tethered to a smartphone">
               <g class="mast"><path d="M560 200 L585 60 L610 200 M567 160h36M574 120h22" /><text class="svg-sm" x="585" y="215">Mobile network</text></g>
               <path class="g4" d="M470 70 l15 -10 l15 10 l15 -10 l15 10 l15 -10 l15 10 l15 -10"/><text class="svg-lbl" x="520" y="45">4G</text>
-              ${FD.dv.phone(410, 80)}<text class="svg-lbl" x="440" y="145">Host device</text>
+              ${FD.dv.phone(410, 80)}<text class="svg-lbl" x="492" y="150">Host device</text>
               ${FD.dv.laptop(60, 85)}<text class="svg-lbl" x="90" y="150">Laptop</text>
               <path class="teth wifi" d="M150 100 H415"/><path class="teth bt" d="M150 115 H415"/><path class="teth usb" d="M140 128 C 250 190, 330 190, 440 128"/>
               <text class="svg-lbl" x="285" y="80" id="tLbl"></text>

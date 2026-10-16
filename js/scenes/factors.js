@@ -61,10 +61,10 @@ FD.add({
       }
       if (st.d > 100) { q *= 0.35; why.push('the cable is longer than 100 m, so the signal loses quality'); }
       if (st.mw && !st.sh) { q *= 0.85; why.push('interference reaches the unshielded cable'); }
-      if (st.mw && st.sh) why.push('the shielded cable is protected from interference');
-      return { sig: q, bw: 1000 * q, lost: Math.min(0.9, (1 - q) * 0.5), why };
+      const good = st.mw && st.sh ? 'the microwave is on, but the shielded cable is protected from interference' : '';
+      return { sig: q, bw: 1000 * q, lost: Math.min(0.9, (1 - q) * 0.5), why, good };
     }
-    const xOf = (d) => 120 + Math.min(d, 120) * 4.1;
+    const xOf = (d) => 150 + Math.min(d, 120) * 3.8;
 
     function draw() {
       const x = xOf(st.d), y = 110;
@@ -84,7 +84,7 @@ FD.add({
       $('#roSig').className = 'ro ' + (r.sig > 0.6 ? 'good' : r.sig < 0.3 ? 'bad' : '');
       $('#roBw').className = $('#roSig').className;
       $('#roLost').className = 'ro ' + (r.lost > 0.2 ? 'bad' : 'good');
-      $('#why').innerHTML = r.why.length ? '⚠️ Slower because ' + r.why.join('; ') + '.' : '✓ Nothing is slowing this connection down.';
+      $('#why').innerHTML = r.why.length ? '⚠️ Slower because ' + r.why.join('; ') + '.' : r.good ? `✓ Full speed: ${r.good}.` : '✓ Nothing is slowing this connection down.';
       // the moving bits: some are lost (red) and have to be sent again
       const n = 8, lostN = Math.round(r.lost * n);
       const bads = new Set(Array.from({ length: lostN }, (_, k) => Math.floor((k * n) / Math.max(lostN, 1))));
