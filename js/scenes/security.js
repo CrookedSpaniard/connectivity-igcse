@@ -108,7 +108,7 @@ FD.add({
 
         <div data-panel="vpn" class="sim" hidden>
           <div class="sim-box">
-            <svg viewBox="0 0 640 190" aria-label="A VPN tunnel from home to the office network">
+            <svg viewBox="-16 0 656 190" aria-label="A VPN tunnel from home to the office network">
               ${FD.dv.laptop(20, 70)}<text class="svg-lbl" x="50" y="135">Working from home</text>
               ${FD.dv.cloud(270, 40)}<text class="svg-lbl" x="316" y="110">Internet (public)</text>
               <path class="tunnel-v" id="tun" d="M85 95 C 200 30, 430 30, 545 95"/>

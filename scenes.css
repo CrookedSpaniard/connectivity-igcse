@@ -1,3 +1,5 @@
+/* The stage is a size container so scene layouts follow its width, not the window. */
+.stage { container: stage / inline-size; }
 /* ======================================================================
    Connectivity: styles for the scene simulations
    ====================================================================== */
@@ -139,7 +141,7 @@
 .radio { fill: #ced4da; stroke: #868e96; stroke-width: 2; }
 .dab { fill: #2b3a1e; }
 [data-mode="dab"] .dab { fill: #94d82d; }
-.dab-t { font: 700 5.5px ui-monospace, Menlo, monospace; fill: #1b2a0b; }
+.dab-t { font: 700 5px ui-monospace, Menlo, monospace; fill: #1b2a0b; }
 .spk { fill: #495057; }
 .plugs { display: grid; grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); gap: .5rem; }
 .plug { display: grid; justify-items: center; gap: .1rem; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: .6rem .4rem; text-align: center; }
@@ -367,6 +369,7 @@
 .desk-bar small { opacity: .85; }
 .desk-body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: .8rem; padding: .8rem; }
 @media (max-width: 680px) { .desk-body { grid-template-columns: 1fr; } }
+@container stage (max-width: 40rem) { .desk-body { grid-template-columns: 1fr; } }
 .folders { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; }
 .folders li { display: flex; align-items: center; justify-content: space-between; gap: .4rem; background: var(--surface); border-radius: 10px; padding: .3rem .5rem; }
 .fold { border: 0; background: transparent; font-weight: 650; text-align: left; }
@@ -407,11 +410,12 @@
 .fw-log li { animation: enter .3s; }
 .fw-log .warn { color: var(--warn); font-weight: 700; }
 .abc { display: grid; gap: .2rem; overflow-x: auto; }
-.abc-row { display: grid; grid-template-columns: repeat(26, minmax(1.25rem, 1fr)); gap: 2px; }
+.abc-row { display: grid; grid-template-columns: repeat(26, minmax(1rem, 1fr)); gap: 2px; }
 .abc-row span { text-align: center; font: 700 .82rem ui-monospace, Menlo, monospace; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .2rem 0; }
 .abc-row.cip span { background: color-mix(in srgb, var(--c9) 12%, var(--surface)); color: var(--c9); }
 .cz-io { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .8rem; align-items: end; }
 @media (max-width: 640px) { .cz-io { grid-template-columns: 1fr; } }
+@container stage (max-width: 30rem) { .cz-io { grid-template-columns: 1fr; } }
 .cz-io label { display: grid; gap: .2rem; font-weight: 650; font-size: .86rem; }
 .cz-io input { border: 1px solid var(--line); border-radius: 8px; padding: .5rem .7rem; font: 700 1.05rem ui-monospace, Menlo, monospace; background: var(--surface); text-transform: uppercase; }
 .cz-out { margin: 0; font: 1.05rem ui-monospace, Menlo, monospace; background: var(--surface-2); border-radius: 8px; padding: .55rem .7rem; word-break: break-all; }

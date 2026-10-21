@@ -70,7 +70,7 @@ FD.add({
                 <g class="mast"><path d="M260 140 L280 50 L300 140 M266 110h28M272 80h16"/></g><text class="svg-sm" x="280" y="40">mobile phone mast (3G/4G)</text>
                 <path class="bb-line" d="M300 120 H330"/>
               </g>
-              <g class="isp"><rect x="330" y="95" width="130" height="90" rx="12"/><text class="svg-lbl" x="395" y="135" id="ispName">ISP</text><text class="svg-sm" x="395" y="155" id="ispSub">Internet Service Provider</text></g>
+              <g class="isp"><rect x="330" y="95" width="130" height="90" rx="12"/><text class="svg-lbl" x="395" y="135" id="ispName">ISP</text><text class="svg-sm" x="395" y="155" id="ispSub" style="font-size: 9.5px">Internet Service Provider</text></g>
               <path class="bb-line on" d="M460 140 H520"/>
               ${FD.dv.cloud(520, 100)}<text class="svg-lbl" x="566" y="160">Internet</text>
               <circle r="7" class="sig-dot" id="bbDot"><animateMotion id="bbAnim" dur="2.4s" repeatCount="indefinite" path="M110 175 H395 V140 H560"/></circle>

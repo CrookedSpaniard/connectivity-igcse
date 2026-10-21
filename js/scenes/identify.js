@@ -96,7 +96,7 @@ FD.add({
 
         <div data-panel="pkt" class="sim" hidden>
           <div class="sim-box">
-            <svg viewBox="0 0 600 220" aria-label="A switch delivering a packet to the right device">
+            <svg viewBox="0 0 600 236" aria-label="A switch delivering a packet to the right device">
               ${NET.map((d) => `<path class="wire" id="wr-${d.id}" d="M${d.x + 30} ${d.y + 22} L300 110"/>`).join('')}
               ${FD.dv.switch(270, 88)}<text class="svg-lbl" x="300" y="140">Switch</text>
               ${NET.map((d) => `<g class="nd" id="nd-${d.id}">${FD.dv[d.dv](d.x, d.y)}<text class="svg-lbl" x="${d.x + 30}" y="${d.y + 58}">${d.n}</text><text class="svg-sm ipl" x="${d.x + 30}" y="${d.y + 70}">${d.ip}</text></g>`).join('')}

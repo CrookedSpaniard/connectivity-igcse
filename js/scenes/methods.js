@@ -93,7 +93,7 @@ FD.add({
               <g class="uhf"><path d="M420 70 h70 M430 60 v20 M445 60 v20 M460 60 v20 M475 60 v20 M490 70 v120"/><text class="svg-sm" x="455" y="50">UHF antenna</text></g>
               <path class="wire on" d="M490 190 H540 V160"/><path class="wire on" id="radioWire" d="M490 190 H560"/>
               ${FD.dv.tv(520, 115)}
-              <g id="radio"><rect class="radio" x="560" y="170" width="90" height="40" rx="6"/><rect class="dab" x="600" y="178" width="44" height="14" rx="2"/><circle cx="578" cy="190" r="10" class="spk"/><text id="dabTxt" class="dab-t" x="602" y="188"></text></g>
+              <g id="radio"><rect class="radio" x="560" y="170" width="90" height="40" rx="6"/><rect class="dab" x="596" y="176" width="52" height="20" rx="2"/><circle cx="578" cy="190" r="10" class="spk"/><text id="dabTxt" class="dab-t" x="599" y="188"></text></g>
             </svg>
           </div>
           <div class="seg" id="bcMode"><span class="seg-l">Signal</span><button data-v="ana">〰️ Analogue TV &amp; radio</button><button data-v="dvbt">📺 Digital TV (DVB-T)</button><button data-v="dab">📻 Digital radio (DAB)</button></div>
@@ -145,8 +145,9 @@ FD.add({
       clearInterval(dabT);
       const msgs = ['Radio Sol 98.2', '18:42', 'Now: “Blue Sky” – The Kites', 'Next: news at 19:00'];
       let k = 0;
-      $('#dabTxt').textContent = m === 'dab' ? msgs[0] : '';
-      if (m === 'dab') dabT = setInterval(() => { $('#dabTxt').textContent = msgs[++k % msgs.length]; }, FD.dur(1400));
+      const dab = (t) => { const w = t.split(' '); let a = t, b = ''; if (t.length > 13) { let i = 1; while (i < w.length && w.slice(0, i + 1).join(' ').length <= 15) i++; a = w.slice(0, i).join(' '); b = w.slice(i).join(' '); } $('#dabTxt').innerHTML = b ? `<tspan x="599" dy="-3">${a}</tspan><tspan x="599" dy="6.5">${b}</tspan>` : a; };
+      dab(m === 'dab' ? msgs[0] : '');
+      if (m === 'dab') dabT = setInterval(() => { dab(msgs[++k % msgs.length]); }, FD.dur(1400));
     }
     $('#bcMode').addEventListener('click', (e) => { const b = e.target.closest('button[data-v]'); if (b) bc(b.dataset.v); });
 
